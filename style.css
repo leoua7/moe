@@ -1,0 +1,113 @@
+:root {
+  --color-pink: #e7bfeb
+}
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+  font-family: Playfair Dispaly;
+}
+
+.cryout {
+  height: 100vh;
+  width: 100vw;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("banner.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+  background-position: 50% 50%;
+	
+	display: flex;
+  justify-content: center;
+  align-items: center;
+
+	text-align: center;
+}
+
+.animated-title .caption-title-word > span {
+	display: inline-block;
+  position: relative;
+  font-size: 80px;
+}
+.animated-title .caption-title-word span.cry-single {
+  color: #fff;
+  opacity: 1;
+}
+
+.animated-title .caption-title-word span.cry-double {
+  position: absolute;
+  color: var(--color-pink);
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.animated-title span.cry-single.animated-letter,
+.animated-title span.cry-double.animated-letter {
+  color: var(--color-pink);
+}
+
+/* animation */
+.animated-title span.cry-single,
+.animated-title span.cry-double {
+	transition: color .5s ease-out;
+}
+
+.animated-title .caption-title-word > span:nth-child(n) span.cry-single.animated-letter {
+	animation: 1.5s 0.25s animation-slideLeftHide ease-in-out forwards;
+}
+
+.animated-title .caption-title-word > span:nth-child(2n) span.cry-single.animated-letter {
+	animation: 1.5s 0.25s animation-slideRightHide ease-in-out forwards;
+}
+
+.animated-title .caption-title-word > span:nth-child(n) span.cry-double.animated-letter {
+	animation: 1s animation-slideRightShow ease-in-out forwards;
+}
+
+.animated-title .caption-title-word > span:nth-child(2n) span.cry-double.animated-letter {
+	animation: 1s animation-slideLeftShow ease-in-out forwards;
+}
+
+/* keyframes-animations */
+@keyframes animation-slideRightHide {
+	from {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateX(150%);
+	}
+}
+@keyframes animation-slideLeftHide {
+	from {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateX(-150%);
+	}
+}
+@keyframes animation-slideRightShow {
+	from {
+		opacity: 0;
+		transform: translateX(150%);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes animation-slideLeftShow {
+	from {
+		opacity: 0;
+		transform: translateX(-150%);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
