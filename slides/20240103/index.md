@@ -51,7 +51,7 @@ Transformer 论文：[Attention Is All You Need](https://arxiv.org/abs/1706.0376
 
 ## 内存
 
-## 通信
+## 通讯
 
 ## 单GPU上
 
