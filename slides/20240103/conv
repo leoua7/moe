@@ -1,0 +1,7 @@
+#!/bin/bash
+
+pandoc index.md -o index.html -t revealjs -s \
+  -V theme=white \
+  -V controls=true \
+  -V slideNumber=true \
+  -V transition=slide  # default  none/fade/slide/convex/concave/zoom
